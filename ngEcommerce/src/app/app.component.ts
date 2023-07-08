@@ -1,13 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
-  selector: 'app-root',
+  selector: 'portfolio-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.sass']
 })
-export class AppComponent {
-  title = 'ngEcommerce';  
+export class AppComponent{
+  title = 'GG-portfolio';  
   
   constructor(private modalService: NgbModal) {
 
@@ -18,5 +18,4 @@ export class AppComponent {
     this.modalService.open(modal);
 
   }
-
 }

@@ -1,26 +1,54 @@
 
 @import '../../styles.sass'
 
+@keyframes pulse
+  0%
+    opacity: 1
+  50%
+    opacity: 0    
+  100%
+    opacity: 1
+    
 
 div > img#full-screen-img
   width: 100vw
   height: 100vh
   object-fit: cover
-  filter: brightness(30%) 
+  filter: brightness(20%) 
 
-div#landingSection
-  margin-left: 15vw
-  margin-top: 20vh
-  height: 30vh
+div.landingSection
+  padding-top: 40vh
+  padding-left: 10vw
   
+  p#landingTxt-1
+    font-size: 28px
+    font-weight: 500
+
+  p#landingTxt-2
+    font-size: 64px
+    font-weight: 600
+    line-height: 2
+
+  p#landingTxt-3
+    font-size: 21px
+    font-weight: 400
+
+  span.pulse
+    animation: pulse 1.5s infinite
+
+@media (max-width: 991px) 
+  div.landingSection
+    padding-left: 0
+
+
 div.sideNav
-  position: static
-  width: 225px
+  position: fixed
+  width: 240px
   height: 100vh
   background-color: $darkColor
   font-family: $myFont
-  font-size: 15px
-  float: left
+  font-size: 20px
+  font-weight: 500
 
   div.row
     height: 100vh

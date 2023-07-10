@@ -1,8 +1,43 @@
-<header>
-    <div id="header" class="full-screen-img z-n1 position-fixed ">
-        <img src="../../../assets/img/SanPietro.jpg!d" alt="">
-    </div>
-    <div class="">
-        
+<header class="overflow-x-hidden">
+    <div class="container-fluid p-0 m-0 ">
+        <img id="full-screen-img" class="z-n1 position-fixed" [src]="imgPath+'SanPietro.jpg!d'" alt="">
+        <div class="sideNav container text-center text-white z-2 overflow-auto float-start">
+            <div class="row justify-content-evenly">
+                <div class="col-12 ">
+                    <img class="mt-5 px-0 " [src]="imgPath+'ProfilePic.jpg'" alt="">
+                    <h1 class="pt-3">Giacomo Ghinelli</h1>
+                </div>
+                <div class="col-12 ">
+                    <ul class="list-unstyled">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About me</a></li>
+                        <li><a href="#">Skills</a></li>
+                        <li><a href="#">Resume</a></li>
+                        <li><a href="#">Portfolio</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 align-self-end pb-2">
+                    <a class="me-2" href="https://github.com/JacKoding" target="_blank"><i class="fa fa-github" style="font-size:32px;"></i></a>
+                    <a class="ms-2" href="https://www.linkedin.com/in/giacomo-ghinelli-3a4162202" target="_blank"><i class="fa fa-linkedin" style="font-size:32px;"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="float-start text-white">
+            <div id="" class="container ">
+                <div id="landingSection" class="row align-items-end overflow-hidden">
+                    <div class="col-12 pb-5">
+                        Welcome
+                    </div>
+                    <div class="col-12">
+                        <span #typingText></span><span>|</span>
+                    </div>
+                    <div class="col-12 pt-5">
+                        based in Italy, Riccione.
+                    </div>
+                </div>
+            </div>
+            <div>ciao</div>
+        </div>
     </div>
 </header>

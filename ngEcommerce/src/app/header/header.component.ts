@@ -9,6 +9,9 @@ export class HeaderComponent  implements AfterViewInit, OnInit{
   imgPath = "../../../assets/img/";
 
   @ViewChild('typingText', { static: false }) typingText!: ElementRef;
+  @ViewChild('tallComponent', { static: false }) tallComponent!: ElementRef;
+  @ViewChild('tallComponent2', { static: false }) tallComponent2!: ElementRef;
+
 
   textToType = 'I\'m a Front-end Dev.';
   textToType2 = "I'm Giacomo Ghinelli.";
@@ -16,6 +19,8 @@ export class HeaderComponent  implements AfterViewInit, OnInit{
   typingSpeed = 100; 
   delayAfterComplete = 1500; 
   isMedium!: boolean;
+  menuIcon = true;
+  myOffsetHeight!: number;
 
   ngOnInit(): void {
     this.isMedium = ( window.innerWidth >= 992 )
@@ -23,6 +28,8 @@ export class HeaderComponent  implements AfterViewInit, OnInit{
   
   ngAfterViewInit(): void {
     this.startTyping();
+    this.myOffsetHeight = this.tallComponent.nativeElement.offsetHeight + this.tallComponent2.nativeElement.offsetHeight
+    this.tallComponent2.nativeElement.style.marginBottom = `${this.myOffsetHeight - 530}px`;
   }
 
   startTyping(): void {
@@ -59,14 +66,11 @@ export class HeaderComponent  implements AfterViewInit, OnInit{
   @HostListener('window:resize', ['$event'])
   onResize(event: Event) {
     this.isMedium = ( window.innerWidth >= 992 )
+    this.myOffsetHeight = this.tallComponent.nativeElement.offsetHeight + this.tallComponent2.nativeElement.offsetHeight
+    this.tallComponent2.nativeElement.style.marginBottom = `${this.myOffsetHeight - 530}px`;
   }
-  
-  /*
-  ngAfterViewInit(): void {
 
-    const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]');
-    const popoverList = Array.from(popoverTriggerList).map(function (popoverTriggerEl) {
-      return new Popover(popoverTriggerEl, {trigger: 'hover', customClass: 'data-bs-custom-class',});
-  });*/
-
+  changeIcon(){
+    this.menuIcon = !this.menuIcon;
+  }
 }

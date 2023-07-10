@@ -1,7 +1,8 @@
-<header class="overflow-x-hidden">
+<div class="row overflow-x-hidden m-0 p-0 ">
     <div class="container-fluid p-0 m-0 text-white">
         <img id="full-screen-img" class="z-n1 position-fixed" [src]="imgPath+'SanPietro.jpg!d'" alt="">
-        <div *ngIf="isMedium" class="sideNav row justify-content-evenly text-center text-white z-2 overflow-auto float-start">
+        <div *ngIf="isMedium; else topNavBar"></div>
+        <div *ngIf="isMedium" class="sideNav row justify-content-evenly text-center text-white z-0 overflow-auto float-start">
             <div class="col-12 ">
                 <img class="mt-5 px-0 " [src]="imgPath+'ProfilePic.jpg'" alt="">
                 <h1 class="pt-3">Giacomo Ghinelli</h1>
@@ -20,27 +21,45 @@
                 <a class="me-2" href="https://github.com/JacKoding" target="_blank"><i class="fa fa-github" style="font-size:32px;"></i></a>
                 <a class="ms-2" href="https://www.linkedin.com/in/giacomo-ghinelli-3a4162202" target="_blank"><i class="fa fa-linkedin" style="font-size:32px;"></i></a>
             </div>
-        </div> 
-        <div class="row landingSection">
-            <div class="col-4">
-                <div id="simple-list-example" class="d-flex flex-column gap-2 simple-list-example-scrollspy text-center">
-                    <p id="landingTxt-1" class="pb-0 ">Welcome</p>
-                    <p id="landingTxt-2"><span #typingText></span><span class="pulse">|</span></p>
-                    <p id="landingTxt-3" class="pt-0 ">Based in Italy, Riccione.</p>
-                </div>
+        </div>
+        <ng-template #topNavBar>
+            <div id="topNavBar" class="container-fluid position-fixed py-2">
+                <nav  class="navbar navbar-expand-lg">
+                    <div class="container-fluid" >
+                        <a class="navbar-brand text-white" href="#">Giacomo Ghinelli</a>
+                            <div class="custom-position d-inline-block position-absolute position-absolute top-0 end-0">
+                                <a class="me-2" href="https://github.com/JacKoding" target="_blank"><i class="fa fa-github" style="font-size:20px;"></i></a>
+                                <a class="ms-2" href="https://www.linkedin.com/in/giacomo-ghinelli-3a4162202" target="_blank"><i class="fa fa-linkedin" style="font-size:20px;"></i></a>
+                            </div>
+                        <button (click)="changeIcon()" class="navbar-toggler button-style" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <i *ngIf="menuIcon; else crossIcon" class="fa-solid fa-bars fa-lg" style="color: #ffffff;"></i>
+                            <ng-template #crossIcon><i class="fa-solid fa-x" style="color: #ffffff;"></i></ng-template>                            
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="list-with-lines  navbar-nav ps-4 px-2">
+                                <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#">About me</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#">Skills</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#">Resume</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#">Portfolio</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </ng-template> 
+        <div #tallComponent class="row z-1 landingSection">
+            <div class="col-4 text-center">
+                <p id="landingTxt-1" class="pb-3 ">Welcome</p>
+                <p id="landingTxt-2"><span #typingText></span><span class="pulse">|</span></p>
+                <p id="landingTxt-3" class="pt-3 ">Based in Italy, Rome.</p>
             </div>
         </div>
-        <!-- <div id="" class="row float-start">
-            <div class="col-12 pb-5">
-                Welcome
-            </div>
-            <div class="col-12">
-                <span #typingText></span><span>|</span>
-            </div>
-            <div class="col-12 pt-5">
-                based in Italy, Riccione.
+        <div #tallComponent2 class="row z-1 pt-5">
+            <div class="col text-center">
+                <button class="btn rounded-pill custom-button px-5 py-3">Hire Me</button>
             </div>
         </div>
-        <div>ciao</div> -->
     </div>
-</header>
+</div>

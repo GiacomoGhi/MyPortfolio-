@@ -73,6 +73,7 @@ implements AfterViewInit, OnInit//, DoCheck
     this.isMedium = ( window.innerWidth >= 992 )
     this.bornLarge = this.isMedium 
     this.viewSize = window.innerWidth;
+    console.log(window.innerHeight);
     
   }
   
@@ -147,39 +148,8 @@ implements AfterViewInit, OnInit//, DoCheck
   
   @HostListener('window:resize', ['$event'])
   onResize(event: Event) {
-    this.isMedium = ( window.innerWidth >= 992 )/*  
-    if(this.isMedium){
-      try {
-        this.elements = [
-          this.tallComponent.nativeElement,
-          this.homeElink.nativeElement,
-          this.aboutElink.nativeElement,
-          this.skillsElink.nativeElement,
-          this.resumeElink.nativeElement,
-          this.portfolioEllink.nativeElement,
-          this.contactEllink.nativeElement,
-        ]
-      } catch (error) {
-        return;
-      }
-      this.sendData(this.elements);
-    } else {
-      try {
-        this.elements = [
-          this.tallComponent.nativeElement,
-          this.homeElinkTop.nativeElement,
-          this.abountElinkTop.nativeElement,
-          this.skillsElinkTop.nativeElement,
-          this.resumeElinkTop.nativeElement,
-          this.portfolioElinkTop.nativeElement,
-          this.contactElinkTop.nativeElement,
-        ]
-      } catch (error) {
-        return;
-      }
-      this.sendData(this.elements);
-      //this.loadElWithDelay(this.homeElTop, false);
-    }*/
+    this.isMedium = ( window.innerWidth >= 992 )
+    
 
   }
 

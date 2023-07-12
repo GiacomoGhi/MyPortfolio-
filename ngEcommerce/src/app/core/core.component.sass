@@ -1,5 +1,7 @@
 @import '../../styles.sass'
 
+
+
 div.main-div
     position: absolute
     z-index: -1
@@ -7,6 +9,10 @@ div.main-div
     background-color: $lessDarkColor
     padding-left: 220px
     margin-bottom: 0
+
+@media (max-height: 500px)
+  div.main-div
+    top: 125vh
 
     
 @media (max-width: 991px) 

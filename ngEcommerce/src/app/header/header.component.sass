@@ -20,6 +20,7 @@
     
 .heightFull
   height: 100vh
+  //min-height: 100vh
 
 div > img#full-screen-img
   width: 100vw
@@ -78,6 +79,17 @@ a.custom-arrow
 @media (min-width: 992px) 
   p#landingTxt-2
     font-size: 4vw
+
+@media (max-height: 600px)
+  a.custom-arrow
+    margin-top: 10vh
+
+@media (max-height: 500px)
+  a.custom-arrow
+    margin-top: 7vh
+  
+  .heightFull
+    min-height: 500px
 
 @media (max-width: 991px) 
   div.landingSection

@@ -1,14 +1,44 @@
 @import '../../styles.sass'
 
 div.main-div
+    position: absolute
+    z-index: -1
+    top: 100vh
     background-color: $lessDarkColor
-    padding-left: 260px
+    padding-left: 220px
     margin-bottom: 0
 
     
 @media (max-width: 991px) 
-    div.main-div
-        padding-left: 30px
+  div.main-div
+    padding-left: 0px
+  div > div 
+    padding-top: 35px
+.color1
+  background-color: $lessDarkColor
+  .word1 
+    user-select: none
+    position: absolute
+    font-size: 110px
+    font-weight: 580
+    color: $hiddenTextDark
+  @media (max-width: 991px) 
+    .word1
+      font-size: 15vw
+
+.color2
+  background-color: $lightColor 
+  .word1 
+    user-select: none
+    position: absolute
+    font-size: 110px
+    font-weight: 580
+    color: $hiddenTextLight
+  @media (max-width: 991px) 
+    .word1
+      font-size: 15vw
+
+
 
 
 span.color
@@ -16,21 +46,17 @@ span.color
 
 .word-container 
   position: relative
+  padding: 10% 0%
+  display: flex
+  justify-content: center
+  align-items: center
 
 
-.word 
-  position: absolute
-
-
-.word1 
-  top: 0
-  left: 0
-  z-index: 1
 
 
 .word2 
-  top: 0
-  left: 40%
   z-index: 2
-  color: $textHighlightColor
+  border-bottom: 3px solid $textHighlightColor
+
+
 

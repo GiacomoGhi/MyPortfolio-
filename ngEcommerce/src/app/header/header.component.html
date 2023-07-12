@@ -1,20 +1,19 @@
-<div class="row overflow-x-hidden m-0 p-0 ">
-    <div class="container-fluid p-0 m-0 text-white">
-        <img id="full-screen-img" class="z-n1 position-fixed" [src]="imgPath+'SanPietro.jpg!d'" alt="">
-        <div *ngIf="isMedium; else topNavBar"></div>
-        <div *ngIf="isMedium" class="sideNav row justify-content-evenly text-center text-white z-0 overflow-auto float-start">
+<div class="row overflow-x-hidden m-0 p-0 heightFull">
+    <div  id="home" class="container-fluid p-0 m-0 text-white">
+        <img id="full-screen-img" class="z-n1 position-fixed pe-0" [src]="imgPath+'SanPietro.jpg!d'" alt="">
+        <div  *ngIf="isMedium; else topNavBar" class="sideNav row justify-content-evenly text-center text-white z-0 overflow-auto float-start" role="tablist">
             <div class="col-12 ">
                 <img class="mt-5 px-0 " [src]="imgPath+'ProfilePic.jpg'" alt="">
                 <h1 class="pt-3">Giacomo Ghinelli</h1>
             </div>
             <div class="col-12 ">
-                <ul class="list-unstyled simple-list-example-scrollspy">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About me</a></li>
-                    <li><a href="#">Skills</a></li>
-                    <li><a href="#">Resume</a></li>
-                    <li><a href="#">Portfolio</a></li>
-                    <li><a href="#">Contact</a></li>
+                <ul class="list-unstyled">
+                    <li ><a href="#home"><span #homeEl>Home</span></a></li>
+                    <li><a href="#about"><span  #homeEl1>About me</span></a></li>
+                    <li><a href="#skills"><span  #homeEl2>Skills</span></a></li>
+                    <li><a href="#resume"><span #homeEl3>Resume</span></a></li>
+                    <li><a href="#portfolio"><span #homeEl4>Portfolio</span></a></li>
+                    <li><a href="#contact"><span #homeEl5>Contact</span></a></li>
                 </ul>
             </div>
             <div class="col-12 align-self-end pb-2">
@@ -23,10 +22,10 @@
             </div>
         </div>
         <ng-template #topNavBar>
-            <div id="topNavBar" class="container-fluid position-fixed py-2">
+            <div id="topNavBar" class="container-fluid position-fixed py-2 z-1">
                 <nav  class="navbar navbar-expand-lg">
                     <div class="container-fluid" >
-                        <a class="navbar-brand text-white" href="#">Giacomo Ghinelli</a>
+                        <a id="name" class="navbar-brand text-white" href="#">Giacomo Ghinelli</a>
                             <div class="custom-position d-inline-block position-absolute position-absolute top-0 end-0">
                                 <a class="me-2" href="https://github.com/JacKoding" target="_blank"><i class="fa fa-github" style="font-size:20px;"></i></a>
                                 <a class="ms-2" href="https://www.linkedin.com/in/giacomo-ghinelli-3a4162202" target="_blank"><i class="fa fa-linkedin" style="font-size:20px;"></i></a>
@@ -37,28 +36,35 @@
                         </button>
                         <div class="collapse navbar-collapse" id="navbarNav">
                             <ul class="list-with-lines  navbar-nav ps-4 px-2">
-                                <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#">About me</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#">Skills</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#">Resume</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#">Portfolio</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                                <li class="nav-item"><a (click)="changeIcon()" class="nav-link p-0" href="#home" ><div class="d-inline-block pb-1 pt-2 container-fluid" data-bs-toggle="collapse" data-bs-target="#navbarNav" #homeElTop>Home</div></a></li>
+                                <li class="nav-item"><a (click)="changeIcon()" class="nav-link p-0" href="#about"><div class="d-inline-block pb-1 pt-2  container-fluid" data-bs-toggle="collapse" data-bs-target="#navbarNav" #homeElTop1>About Me</div></a></li>
+                                <li class="nav-item"><a (click)="changeIcon()" class="nav-link p-0" href="#skills"><div class="d-inline-block pb-1 pt-2  container-fluid" data-bs-toggle="collapse" data-bs-target="#navbarNav" #homeElTop2>Skills</div></a></li>
+                                <li class="nav-item"><a (click)="changeIcon()" class="nav-link p-0" href="#resume"><div class="d-inline-block pb-1 pt-2  container-fluid" data-bs-toggle="collapse" data-bs-target="#navbarNav" #homeElTop3>Resume</div></a></li>
+                                <li class="nav-item"><a (click)="changeIcon()" class="nav-link p-0" href="#portfolio"><div class="d-inline-block pb-1 pt-2  container-fluid" data-bs-toggle="collapse" data-bs-target="#navbarNav" #homeElTop4>Portfolio</div></a></li>
+                                <li class="nav-item"><a (click)="changeIcon()" class="nav-link p-0" href="#contact"><div class="d-inline-block pb-0 pt-2  container-fluid" data-bs-toggle="collapse" data-bs-target="#navbarNav" #homeElTop5>Contact</div></a></li>
                             </ul>
                         </div>
                     </div>
                 </nav>
             </div>
         </ng-template> 
-        <div #tallComponent class="row z-1 landingSection">
+        <div  class="row z-1 landingSection">
             <div class="col-4 text-center">
-                <p id="landingTxt-1" class="pb-3 ">Welcome</p>
+                <p #tallComponent id="landingTxt-1" class="pb-3 ">Welcome</p>
                 <p id="landingTxt-2"><span #typingText></span><span class="pulse">|</span></p>
                 <p id="landingTxt-3" class="pt-3 ">Based in Italy, Rome.</p>
             </div>
         </div>
-        <div #tallComponent2 class="row z-1 pt-5">
+        <div #tallComponent2 class="row z-0 pt-5 justify-content-center">
             <div class="col text-center">
-                <button class="btn rounded-pill custom-button px-5 py-3">Hire Me</button>
+                <a href="#contact"><button class="btn rounded-pill custom-button px-5 py-3">Hire Me</button></a>
+            </div>
+        </div>
+        <div class="row">            
+            <div class="col custom-arrow">
+                <a href="#about" class="custom-arrow">
+                    <i class="fa-solid fa-arrow-down fa-lg" style="color:#ffffff; font-size: 50px;"></i>
+                </a>
             </div>
         </div>
     </div>

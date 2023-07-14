@@ -57,6 +57,18 @@ button.custom-button
     background-color: rgba(27,170,128,255)
 
 
+button.custom-button2
+  font-size: 18px
+  font-weight: 400
+  color: $hiddenTextLight
+  border-style: solid
+  border-width: 3px
+  border-color: $hiddenTextLight
+  &:hover
+    transition-duration: 0.3s
+    background-color: $hiddenTextLight
+    color: rgb(255, 255, 255)
+
 .color
     color: $textHighlightColor
 
@@ -70,12 +82,40 @@ a
   justify-content: center
   align-items: center
 
+.edu-exp
+  h1
+    font-size: 40px
+    margin-left: 40px
+
+.eux-element
+  background-color:  rgb(17, 20, 24)
+  border-radius: 5px
+  padding: 20px 22px 15px 22px
+  margin: 40px 28px  
+  @media ( max-width: 575px )    
+    margin: 20px 14px  
+    
+  span:first-child
+    padding: 0px 5px 2px 5px
+    border-radius: 5px 
+    background-color: $textHighlightColor
+    color: rgb(255, 255, 255)
+    font-size: 17px
+  h2
+    margin-top: 10px 
+  h3
+    margin: 10px 0px
+    color: $textHighlightColor
+    font-size: 22px
+  p
+    font-size: 22px
 
 
 
 .word2 
   z-index: 2
-  border-bottom: 3px solid $textHighlightColor
+  span
+    border-bottom: 3px solid $textHighlightColor
 
 
 
@@ -95,8 +135,71 @@ p
   line-height: 1.61
   color: rgb(187, 187, 187)
 
+
 b 
   font-size: 18px
   font-weight: 700
   line-height: 1.61
   color: rgb(187, 187, 187)
+
+
+ul.skills-list
+  li
+    padding: 15px 0
+    &:last-child
+      padding-bottom: 0px
+  span
+    padding-left: 5px
+  
+  
+
+label
+  display: none
+  
+
+.form-control
+  background: $lightColor
+  border-color: $lightColor
+  color: rgb(255, 255, 255)
+  &::placeholder
+    color: rgb(187, 187, 187)
+  &:focus
+    transition-duration: 1s
+    outline: 2px solid #9eeaff !important
+
+input:-webkit-autofill:active
+  background-color: $lightColor !important
+
+textarea
+  
+  &::-webkit-scrollbar
+      width: 1vw
+      
+
+  &::-webkit-scrollbar-thumb
+    background-color: rgb(97, 103, 108)
+    border-radius: 8px
+    &:hover
+      background-color: rgb(168, 173, 178)    
+          
+  &::-webkit-scrollbar-track
+      background-color: $darkColor
+      &:hover
+          background-color: $lessDarkColor
+
+.address > p
+  font-size: 15px
+  padding: 2px 0
+  margin:  0
+  line-height: 1.3
+
+i
+  color: rgb(170, 177, 184)
+
+i.fa-github:hover
+  transition-duration: 0.5s
+  color: rgb(51, 51, 51)
+
+i.fa-linkedin:hover
+  transition-duration: 0.5s
+  color: rgb(10, 102, 194)

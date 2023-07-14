@@ -1,6 +1,6 @@
-<div class="row overflow-x-hidden m-0 p-0 heightFull">
+<div class="row overflow-hidden m-0 p-0 heightFull">
     <div  id="home" class="container-fluid p-0 m-0 text-white">
-        <img id="full-screen-img" class="z-n1 position-fixed pe-0" [src]="imgPath+'SanPietro.jpg!d'" alt="">
+        <img id="full-screen-img" class="z-n1 position-fixed    " [src]="imgPath+'SanPietro.jpg!d'" alt="">
         <div  *ngIf="isMedium; else topNavBar" class="sideNav row justify-content-evenly text-center text-white z-0 overflow-auto float-start" role="tablist">
             <div class="col-12 ">
                 <img class="mt-5 px-0 " [src]="imgPath+'ProfilePic.jpg'" alt="">
@@ -17,8 +17,8 @@
                 </ul>
             </div>
             <div class="col-12 align-self-end pb-2">
-                <a class="me-2" href="https://github.com/JacKoding" target="_blank"><i class="fa fa-github" style="font-size:32px;"></i></a>
-                <a class="ms-2" href="https://www.linkedin.com/in/giacomo-ghinelli-3a4162202" target="_blank"><i class="fa fa-linkedin" style="font-size:32px;"></i></a>
+                <a class="me-2" href="https://github.com/JacKoding" target="_blank"><i class="fa fa-github" style="font-size:20px;"></i></a>
+                <a class="ms-2" href="https://www.linkedin.com/in/giacomo-ghinelli-3a4162202" target="_blank"><i class="fa fa-linkedin" style="font-size:20px;"></i></a>
             </div>
         </div>
         <ng-template #topNavBar>
@@ -48,23 +48,25 @@
                 </nav>
             </div>
         </ng-template> 
-        <div  class="row z-1 landingSection">
-            <div class="col-4 text-center">
-                <p #tallComponent id="landingTxt-1" class="pb-3 ">Welcome</p>
-                <p id="landingTxt-2"><span #typingText></span><span class="pulse">|</span></p>
-                <p id="landingTxt-3" class="pt-3 ">Based in Italy, Rome.</p>
+        <div class="landingText">
+            <div  class="row z-1 landingSection">
+                <div class="col-4 text-center">
+                    <p #tallComponent id="landingTxt-1" class="pb-3 ">Welcome</p>
+                    <p id="landingTxt-2"><span #typingText></span><span class="pulse">|</span></p>
+                    <p id="landingTxt-3" class="pt-3 ">Based in Italy, Rome.</p>
+                </div>
             </div>
-        </div>
-        <div #tallComponent2 class="row z-0 pt-5 justify-content-center">
-            <div class="col text-center">
-                <a href="#contact"><button class="btn rounded-pill custom-button px-5 py-3">Hire Me</button></a>
+            <div #tallComponent2 class="row z-0 pt-5 justify-content-center">
+                <div class="col text-center">
+                    <a href="#contact"><button class="btn rounded-pill custom-button px-5 py-3">Hire Me</button></a>
+                </div>
             </div>
-        </div>
-        <div class="row">            
-            <div class="col custom-arrow">
-                <a href="#about" class="custom-arrow">
-                    <i class="fa-solid fa-arrow-down fa-lg" style="color:#ffffff; font-size: 50px;"></i>
-                </a>
+            <div class="row">
+                <div class="col custom-arrow">
+                    <a href="#about" class="custom-arrow">
+                        <i class="fa-solid fa-arrow-down fa-lg" style="color:#ffffff; font-size: 50px;"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </div>

@@ -75,7 +75,7 @@ export class AppComponent implements AfterViewInit{
       this.renderer.removeClass(this.highlightedNavLink, 'hover-effect');
       this.renderer.addClass(this.headerLinkElements[5], 'hover-effect');
       this.highlightedNavLink = this.headerLinkElements[5];
-    } else {
+    } else if (isHomeVisible[5]) {
       this.renderer.removeClass(this.highlightedNavLink, 'hover-effect');
       this.renderer.addClass(this.headerLinkElements[6], 'hover-effect');
       this.highlightedNavLink = this.headerLinkElements[6];

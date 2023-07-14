@@ -20,8 +20,10 @@ div.main-div
     padding-left: 0px
   div > div 
     padding-top: 35px
+
 .color1
   background-color: $lessDarkColor
+  padding-right: 0
   .word1 
     user-select: none
     position: absolute
@@ -34,6 +36,7 @@ div.main-div
 
 .color2
   background-color: $lightColor 
+  padding-right: 0
   .word1 
     user-select: none
     position: absolute
@@ -45,10 +48,20 @@ div.main-div
       font-size: 15vw
 
 
+button.custom-button
+  font-weight: 600
+  background-color: $textHighlightColor
+  color: rgb(255, 255, 255)
+  &:hover
+    transition-duration: 0.3s
+    background-color: rgba(27,170,128,255)
 
 
-span.color
+.color
     color: $textHighlightColor
+
+a
+  text-decoration: none
 
 .word-container 
   position: relative
@@ -66,3 +79,24 @@ span.color
 
 
 
+ul.list-with-lines 
+  li 
+    list-style: none
+    padding: 10px 0
+    &:not(:last-child)      
+      border-bottom: 1px solid hsla(0,0%,98%,.12)
+
+h1
+  font-size: 28px
+
+p
+  font-size: 18px
+  font-weight: 400
+  line-height: 1.61
+  color: rgb(187, 187, 187)
+
+b 
+  font-size: 18px
+  font-weight: 700
+  line-height: 1.61
+  color: rgb(187, 187, 187)

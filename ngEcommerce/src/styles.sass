@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
 
-@import '~bootstrap/dist/css/bootstrap.css'
+//@import '~bootstrap/dist/css/bootstrap.css'
 $myFont: Poppins, sans-serif
 $textHighlightColor: rgb(32, 201, 151)
 $hiddenTextLight:rgb(62, 68, 74)
@@ -9,3 +9,18 @@ $hiddenTextDark: rgb(41, 45, 50)
 $darkColor: rgb(17, 20, 24)
 $lessDarkColor: rgb(33, 37, 41)
 $lightColor: rgb(52, 58, 64)
+
+html::-webkit-scrollbar
+    width: 0.7vw
+    
+
+html::-webkit-scrollbar-thumb
+    background-color: rgb(97, 103, 108)
+    border-radius: 8px
+    &:hover
+        background-color: rgb(168, 173, 178)    
+        
+html::-webkit-scrollbar-track
+    background-color: $darkColor
+    
+

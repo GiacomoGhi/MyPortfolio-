@@ -2,6 +2,9 @@
 
 @import '../../styles.sass'
 
+@import '~bootstrap/dist/css/bootstrap.css'
+
+
 @keyframes pulse
   0%
     opacity: 1
@@ -20,7 +23,7 @@
     
 .heightFull
   height: 100vh
-  //min-height: 100vh
+  min-height: 360px
 
 div > img#full-screen-img
   width: 100vw
@@ -35,13 +38,16 @@ div.landingSection
   span.pulse
     animation: pulse 1.0s infinite
   
+.landingText
+  min-height: 528px
+
 
 p#landingTxt-1
     font-size: 28px
     font-weight: 500
 
 p#landingTxt-2
-  font-size: 8vw
+  font-size: 6vw
   font-weight: 500
   line-height: 1.3
 
@@ -62,6 +68,7 @@ button.custom-button:hover
   transition-duration: 0.3s
   border-style: solid
   border-width: 2px
+  color: rgb(255, 255, 255)
   border-color: $textHighlightColor
   background: $textHighlightColor
 
@@ -78,7 +85,17 @@ a.custom-arrow
 
 @media (min-width: 992px) 
   p#landingTxt-2
-    font-size: 4vw
+    font-size: 3.5vw
+
+@media (max-height: 600px)
+  a.custom-arrow
+    margin-top: 10vh
+
+@media (max-height: 500px)
+  a.custom-arrow
+    margin-top: 7vh
+  
+
 
 @media (max-height: 600px)
   a.custom-arrow
@@ -158,7 +175,21 @@ div.sideNav
   font-family: $myFont
   font-size: 20px
   font-weight: 500
-  
+
+  &::-webkit-scrollbar
+      width: 0.5vw
+      
+
+  &::-webkit-scrollbar-thumb
+    background-color: rgb(97, 103, 108)
+    border-radius: 8px
+    &:hover
+      background-color: rgb(168, 173, 178)    
+          
+  &::-webkit-scrollbar-track
+      background-color: $darkColor
+      &:hover
+          background-color: $lessDarkColor
     
 
   div.row
@@ -170,7 +201,7 @@ div.sideNav
     border-radius: 50%
     border-style: solid
     border-width: 8px
-    border-color: $lessDarkColor
+    border-color: $lightColor
   
   h1
     font-family: $myFont
@@ -179,11 +210,11 @@ div.sideNav
   
 
   li
-    margin: 30px
+    margin: 10px
 
   li > a
     padding: 20px 10px
-    font-size: 17px
+    font-size:15px
     text-decoration: none
     color: white
     

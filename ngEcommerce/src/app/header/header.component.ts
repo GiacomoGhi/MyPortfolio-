@@ -43,7 +43,7 @@ implements AfterViewInit, OnInit//, DoCheck
   
   @HostListener('window:scroll', ['$event'])
   logMe(){
-    this.checkElementVisibility();
+    //this.checkElementVisibility();
   }
 
   checkElementVisibility() {
@@ -104,7 +104,7 @@ implements AfterViewInit, OnInit//, DoCheck
       ]
     }
     this.sendData(this.elements);
-    this.checkElementVisibility();
+    //this.checkElementVisibility();
   }
 
   sleepToLoadEl = (delay: number) => new Promise((resolve) => setTimeout(resolve, delay));
@@ -176,7 +176,8 @@ implements AfterViewInit, OnInit//, DoCheck
           this.contactEllink.nativeElement,
         ]
       } catch (error) {
-        return;
+        console.log(error); 
+        return;       
       }
       this.sendData(this.elements);
     } else {
@@ -191,6 +192,7 @@ implements AfterViewInit, OnInit//, DoCheck
           this.contactElinkTop.nativeElement,
         ]
       } catch (error) {
+        console.log(error);
         return;
       }
       this.sendData(this.elements);

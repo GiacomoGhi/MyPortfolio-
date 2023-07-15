@@ -1,5 +1,8 @@
 import { Component, ViewChild, ElementRef, AfterViewInit, EventEmitter, Output } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
+import  emailjs  from '@emailjs/browser';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'portfolio-core',
@@ -14,8 +17,17 @@ export class CoreComponent implements AfterViewInit {
   @ViewChild('portfolioComponent', {static: false}) portfolioEl!: ElementRef;
   @ViewChild('contactComponent', {static: false}) contactEl!: ElementRef;
   
-  
   elements: Element[] = [];
+
+  submitted = false;
+
+  form: FormGroup = this.fb.group({
+    from_name: '',
+    from_email: '',
+    message: ''
+  })
+
+  constructor(private fb: FormBuilder, private toastr: ToastrService){}
 
   ngAfterViewInit(): void {
     this.elements  = [
@@ -32,6 +44,46 @@ export class CoreComponent implements AfterViewInit {
 
   sendData(data: Element[]){
     this.coreEvent.emit(data)
+  }
+
+  showSuccess() {
+    this.toastr.success(
+      'Message has been sent successfully.\n' +
+      'Thank you for reaching me out!\n'
+    );
+  }
+
+  showError() {
+    this.toastr.error(
+      'ERROR! :(\n' +
+      'Please, Contact me manually.\n'+
+      'Thank you for your patience.'
+    );
+  }
+
+  async sendEmail(){    
+    this.submitted = true;
+    emailjs.init('M-DaxoXwzKAw_kBBg');
+    try {
+      let response = await emailjs.send("service_r7zrtla","template_gj85zgd",{
+        from_name: this.form.value.from_name,
+        from_email: this.form.value.from_email,
+        message: this.form.value.message,
+      });
+
+      this.submitted = false;
+
+      if(response.text === "OK"){
+        this.showSuccess();
+      } else {
+        this.showError();
+      }
+
+      this.form.reset();
+
+    } catch(error) {
+      this.showError();
+    }
   }
 
 }

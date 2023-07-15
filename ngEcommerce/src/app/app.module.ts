@@ -8,6 +8,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { HeaderComponent } from './header/header.component';
 import { CoreComponent } from './core/core.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,16 @@ import { CoreComponent } from './core/core.component';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    ToastrModule.forRoot({
+      maxOpened: 1,
+      timeOut: 5000,
+      progressBar: true,
+      progressAnimation: 'decreasing',
+      easing: 'ease-in',
+      easeTime: 300
+    })
     
   ],
   providers: [],

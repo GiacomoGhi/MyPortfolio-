@@ -73,7 +73,6 @@ implements AfterViewInit, OnInit//, DoCheck
     this.isMedium = ( window.innerWidth >= 992 )
     this.bornLarge = this.isMedium 
     this.viewSize = window.innerWidth;
-    console.log(window.innerHeight);
     
   }
   
@@ -176,7 +175,6 @@ implements AfterViewInit, OnInit//, DoCheck
           this.contactEllink.nativeElement,
         ]
       } catch (error) {
-        console.log(error); 
         return;       
       }
       this.sendData(this.elements);
@@ -192,7 +190,6 @@ implements AfterViewInit, OnInit//, DoCheck
           this.contactElinkTop.nativeElement,
         ]
       } catch (error) {
-        console.log(error);
         return;
       }
       this.sendData(this.elements);

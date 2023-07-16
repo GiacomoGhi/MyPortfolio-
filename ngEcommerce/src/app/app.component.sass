@@ -5,3 +5,30 @@
 .hover-effect
   transition-duration: 0.2s
   color: $textHighlightColor
+
+.loader
+  position: fixed
+  top: 0
+  left: 0
+  width: 100vw
+  height: 100vh
+  display: flex
+  justify-content: center
+  align-items: center
+  background-color: #f7f9fb
+  transition: opacity 0.75s, visibility 0.75s
+  &::after
+    content: ""
+    width: 75px
+    height: 75px
+    border: 13px solid #dddddd
+    border-top-color: $textHighlightColor
+    border-radius: 50%
+    animation: loading 0.75s ease infinite
+
+@keyframes loading
+  0%
+    transform: rotate(0turn)
+  100%
+    transform: rotate(1turn)
+    

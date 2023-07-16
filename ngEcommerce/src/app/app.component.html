@@ -2,3 +2,5 @@
 <portfolio-header (event)="receiveData($event)"></portfolio-header>
 <portfolio-core (coreEvent)="receiveCoreData($event)"></portfolio-core>
 </div>
+
+<div *ngIf="!contentReady" class="loader"></div>

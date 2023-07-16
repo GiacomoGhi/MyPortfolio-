@@ -211,3 +211,44 @@ i.fa-github:hover
 i.fa-linkedin:hover
   transition-duration: 0.5s
   color: rgb(10, 102, 194)
+
+
+div.card 
+  color: rgb(187, 187, 187)
+  background-color:  rgb(17, 20, 24)
+  h1
+    color: #ffffff
+  h2
+    color: #ffffff
+  .img-container
+    position: relative
+    display: inline-block
+    &:hover
+      img
+        transition-duration: 0.7s
+        filter: brightness(10%)
+      span
+        transition-duration: 0.7s
+        opacity: 1
+  .overlay-txt 
+    user-select: none
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    font-size: 18px
+    font-weight: bold
+    color: #fff
+    opacity: 0
+    transition: opacity 0.3s ease
+
+
+
+.image-container:hover 
+  img 
+    brightness: 0.3
+
+
+.image-container:hover 
+  .overlay-text 
+    opacity: 1

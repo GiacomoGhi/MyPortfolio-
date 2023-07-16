@@ -11,6 +11,42 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class CoreComponent implements AfterViewInit {
 
+  resumeEduContent = [
+    {
+      date: '2015 - 2020',
+      title: 'High school qualification',
+      location: 'Guglielmo Marconi, Pesaro',
+      content: 'Scientific high school qualification with athletic enhancement'
+    },
+    {
+      date: '2022 - 2025',
+      title: 'Bachelor Degree',
+      location: 'University of Bologna',
+      content: 'Ongoing Bachelor\'s Degree in Computer Systems Engineering'
+    },
+    {
+      date: '2021 - 2022',
+      title: 'Certification',
+      location: 'freeCodeCamp',
+      content: 'Scientific Computing with Python'
+    }
+  ]
+
+  resumeExpContent = [
+    {
+      date: '2018 - 2022',
+      title: 'Beach Facilities and Services Staff',
+      location: 'Rimini',
+      content: 'Assuring the quality of beach services and clients\' statisfaction',
+    },
+    {
+      date: '2018 - 2020',
+      title: 'Boxing trainer assistant',
+      location: 'Cattolica Boxe',
+      content: 'Supporting the main boxing trainer in various tasks such as setting up training sessions, providing feedback to the boxers, and assisting with other aspects of the training process.',
+    }
+  ]
+
   @ViewChild('aboutComponent', { static: false }) aboutEl!: ElementRef;
   @ViewChild('skillsComponent', { static: false }) skillsEl!: ElementRef;
   @ViewChild('resumeComponent', {static: false}) resumeEl!: ElementRef;
@@ -38,6 +74,8 @@ export class CoreComponent implements AfterViewInit {
       this.contactEl.nativeElement,
     ]
     this.sendData(this.elements);
+    console.log(this.resumeEduContent[0].title);
+    
   }
 
   @Output() coreEvent = new EventEmitter<Element[]>()
@@ -85,5 +123,7 @@ export class CoreComponent implements AfterViewInit {
       this.showError();
     }
   }
+  
+
 
 }

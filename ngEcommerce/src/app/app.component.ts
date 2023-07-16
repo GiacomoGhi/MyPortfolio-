@@ -1,4 +1,4 @@
-import { Component, ViewChild, Renderer2, ElementRef, HostListener, AfterViewInit } from '@angular/core';
+import { Component, ViewChild, Renderer2, ElementRef, HostListener, AfterViewInit, AfterContentInit  } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
@@ -6,11 +6,13 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.sass']
 })
-export class AppComponent implements AfterViewInit{
+export class AppComponent 
+implements AfterViewInit, AfterContentInit{
   title = 'GG-portfolio'; 
   headerLinkElements!: Element[]
   coreElements!: Element[]
   highlightedNavLink!: Element;
+  contentReady:boolean = false;
 
   @ViewChild('tallComponent', {static: false}) prova!: ElementRef;
 
@@ -86,5 +88,9 @@ export class AppComponent implements AfterViewInit{
 
     this.modalService.open(modal);
 
+  }
+
+  ngAfterContentInit(): void {
+    this.contentReady = true;
   }
 }

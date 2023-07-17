@@ -56,8 +56,19 @@ button.custom-button
     transition-duration: 0.3s
     background-color: rgba(27,170,128,255)
 
-
-    
+button.custom-button3
+  border-style: solid
+  border-width: 2px
+  border-top-left-radius: 25%
+  border-color: $textHighlightColor
+  color: $textHighlightColor
+  &:hover
+    transition-duration: 0.3s
+    border-style: solid
+    border-width: 2px
+    color: rgb(255, 255, 255)
+    border-color: $textHighlightColor
+    background: $textHighlightColor    
 
 button.custom-button2
   font-size: 18px
@@ -230,6 +241,7 @@ div.card
       span
         transition-duration: 0.7s
         opacity: 1
+
   .overlay-txt 
     user-select: none
     position: absolute
@@ -242,13 +254,3 @@ div.card
     opacity: 0
     transition: opacity 0.3s ease
 
-
-
-.image-container:hover 
-  img 
-    brightness: 0.3
-
-
-.image-container:hover 
-  .overlay-text 
-    opacity: 1

@@ -74,7 +74,6 @@ export class CoreComponent implements AfterViewInit {
       this.contactEl.nativeElement,
     ]
     this.sendData(this.elements);
-    console.log(this.resumeEduContent[0].title);
     
   }
 

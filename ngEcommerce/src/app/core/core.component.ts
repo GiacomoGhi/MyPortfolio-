@@ -37,7 +37,7 @@ export class CoreComponent implements AfterViewInit {
       date: '2018 - 2022',
       title: 'Beach Facilities and Services Staff',
       location: 'Rimini',
-      content: 'Assuring the quality of beach services and clients\' statisfaction',
+      content: 'Assuring the quality of beach services and clients\' satisfaction',
     },
     {
       date: '2018 - 2020',
